@@ -8,9 +8,10 @@ app.controller('TodoCtrl', ['$scope', function ($scope) {
    };
 
    $scope.trash = function(){
-   		$scope.todos = _.filter($scope.todos,function(todo){
-   			return !todo.done;
-   		});
+  
+      $scope.todos= $scope.todos.filter(function(todo){
+        return !todo.done;
+      });
    };
 
     $scope.addTodo = function(){
