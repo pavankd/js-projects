@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>AngularJS Tutorials |DataBind Example</title>
+    <script type="text/javascript" src="../libs/angular.js"></script>
+</head>
+
+<body ng-app>
+    <div ng-init="qty=1;cost=2">
+        <b>Invoice :</b>
+        <div>
+            Quantity :
+            <input type="number" min="0" ng-model="qty" />
+        </div>
+        <div>
+            Cost :
+            <input type="number" min="0" ng-model="cost" />
+        </div>
+        <div>
+            <b>Total :</b> {{qty*cost | currency}}
+        </div>
+    </div>
+</body>
+
+</html>

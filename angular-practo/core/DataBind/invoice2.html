@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>AngularJS Tutorials |DataBind Example</title>
+    <script type="text/javascript" src="../libs/angular.js"></script>
+    <script type="text/javascript" src="invoice2.js"></script>
+    <script type="text/javascript" src="finance2.js"></script>
+</head>
+
+<body ng-app="invoice2">
+    <div ng-controller="InvoiceController as invoice">
+        <b>Invoice :</b>
+        <div>
+            Quantity :
+            <input type="number" min="0" ng-model="invoice.qty" required />
+        </div>
+        <div>
+            Cost :
+            <input type="number" min="0" ng-model="invoice.cost" required/>
+            <select ng-model="invice.inCurr">
+                <option ng-repeat="c in invoice.currencies">{{c}}</option>
+            </select>
+        </div>
+        <div>
+            <b>Total :</b>
+            <span ng-repeat="c in invoice.currencies">
+            {{invoice.total(c) | currency:c}}
+            </span>
+            <button class="btn" ng-click="invoice.pay()">Pay</button>
+        </div>
+    </div>
+</body>
+
+</html>
