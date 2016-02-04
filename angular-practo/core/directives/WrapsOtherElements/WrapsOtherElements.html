@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>AngularJS Tutorials |</title>
+        <script type="text/javascript" src="../../libs/angular.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body ng-app="myApp">
+  <!--      <div ng-controller="myController">
+            <my-dialog>Check out the contents, {{name}}!</my-dialog>
+        </div>-->
+        <div ng-controller="dialogController">
+            {{message}}
+            <sec-dialog ng-hide="dialogIsHidden" on-close="hideDialog(message)">
+            Check Out the contents, {{name}}
+            </sec-dialog>
+        </div>  
+    </body>
+    
+</html>
